@@ -9,10 +9,10 @@ function App() {
   return (
     <>
     {/* Navbar Container Wraper */}
-    <div className='w-[100%] absolute z-10'>
+    <div className='w-[100%] absolute z-10 bg-gray-200'>
       <Navbar />
       </div>
-      <div className='w-full h-[100vh]'>
+      <div className='bg-gray-200'>
        <Home />
       </div>
     </>
