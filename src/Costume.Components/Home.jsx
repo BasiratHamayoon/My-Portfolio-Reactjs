@@ -9,9 +9,10 @@ const Home = () => {
   const specificationWords = specification.split(" ");
 
   return (
-    <div className="flex justify-center items-center w-full lg:px-10">
-      <div className="h-[90vh] w-full bg-cover bg-center grid lg:w-[63%] lg:grid-cols-[70%_30%] gap-4 pt-[100px]">
-        <div className="flex flex-col justify-center items-start">
+    <div className="flex justify-center items-center w-full lg:px-10 px-[40px]">
+      <div className="lg:h-[90vh] w-full bg-cover bg-center grid lg:w-[70%] lg:grid-cols-[70%_30%]
+       gap-4 pt-[100px]">
+        <div className="flex flex-col justify-center items-start pl-[20px]">
           {/* Greeting and Name */}
           <motion.h1
             className="font-handwriting text-[18px]"
@@ -43,7 +44,7 @@ const Home = () => {
 
           {/* Job Title */}
           <motion.h1
-            className="font-bold text-[30px]"
+            className="font-bold lg:text-[30px] md:text-[27px]"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.5, duration: 0.6 }}
