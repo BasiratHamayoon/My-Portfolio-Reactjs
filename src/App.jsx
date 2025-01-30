@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import Navbar from './Costume.Components/Navbar.jsx'
 import Home from './Costume.Components/Home'
-import Services from './Costume.Components/Services'
+import Skills from './Costume.Components/Skills'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,7 +17,7 @@ function App() {
        <Home />
       </div>
       <div className=''>
-      <Services />
+       <Skills />
       </div>
     </>
   )
