@@ -3,6 +3,7 @@ import './App.css'
 import Navbar from './Costume.Components/Navbar.jsx'
 import Home from './Costume.Components/Home'
 import Skills from './Costume.Components/Skills'
+import Projects from './Costume.Components/Projects'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,9 @@ function App() {
       </div>
       <div className=''>
        <Skills />
+      </div>
+      <div className='h-[100vh] overflow-hidden'>
+        <Projects />
       </div>
     </>
   )
