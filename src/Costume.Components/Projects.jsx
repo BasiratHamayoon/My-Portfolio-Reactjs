@@ -70,19 +70,19 @@ const Projects = () => {
                 <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 items-center gap-6 my-[50px] px-[10px]'>
                     {projectItems.map((item) => (
                         <motion.div 
-                        className={`relative flex flex-col justify-center items-center px-[10px] py-10 shadow-md gap-5 rounded-lg bg-gray-400 transition-all duration-300 cursor-pointer bg-transparent text-white
+                        className={`relative flex flex-col justify-center items-center px-[10px] py-10 shadow-md gap-5 rounded-lg bg-gray-400 transition-all duration-300 cursor-pointer text-white
                             ${hoveredId === item.id ? 'z-10' : 'z-0'}`}
                         key={item.id}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1.2, delay: 1.6 }}
+                        transition={{ duration: 1.2, delay: 1.3 }}
                         viewport={{ once: true }}
                         onMouseEnter={() => setHoveredId(item.id)}
                         onMouseLeave={() => setHoveredId(null)}
                         animate={{
                             scale: hoveredId === item.id ? 1.2 : 1,
                             boxShadow: hoveredId === item.id ? '0px 10px 20px rgba(0, 0, 0, 0.2)' : 'none',
-                            transition: { duration: 0.5 }
+                            transition: { duration: 0.2 }
                         }}
                     >
                             <div className='h-[150px] flex justify-center items-center w-full'>

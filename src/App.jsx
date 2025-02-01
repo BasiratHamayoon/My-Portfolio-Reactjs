@@ -11,10 +11,10 @@ function App() {
   return (
     <>
     {/* Navbar Container Wraper */}
-    <div className='w-[100%] absolute z-10 bg-gray-200 lg:px-[52px] md:px-[20px]'>
+    <div className='w-[100%] absolute z-10 bg-white lg:px-[52px] md:px-[20px]'>
       <Navbar />
       </div>
-      <div className='bg-gray-200'>
+      <div className='bg-[#14a423] h-[100vh]'>
        <Home />
       </div>
       <div className=''>

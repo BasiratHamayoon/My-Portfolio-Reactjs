@@ -1,5 +1,5 @@
 import React from 'react';
-import profileImage from '../assets/Home-Images/profile-picture.png';
+import profileImage from '../assets/Home-Images/ph.png';
 import { motion } from 'framer-motion';
 
 const Home = () => {
@@ -8,14 +8,40 @@ const Home = () => {
   const specification = "A FRONTEND DEVELOPER";
   const specificationWords = specification.split(" ");
 
+  // Circle Animation Settings
+  const generateCircles = () => {
+    const circles = [];
+    for (let i = 0; i < 5; i++) {
+      circles.push(
+        <motion.div
+          key={i}
+          className="absolute w-[20px] h-[20px] rounded-full bg-[#14a423] opacity-50"
+          initial={{ bottom: '-50px', opacity: 0 }}
+          animate={{ bottom: '100%', opacity: 1 }}
+          transition={{
+            delay: i * 0.5,
+            duration: 6,
+            repeat: Infinity,
+            repeatType: 'reverse',
+          }}
+          style={{ left: `${Math.random() * 80 + 10}%`, animationTimingFunction: 'ease-in-out' }}
+        />
+      );
+    }
+    return circles;
+  };
+
   return (
     <div className="flex justify-center items-center w-full lg:px-10 px-[40px]">
-      <div className="lg:h-[90vh] w-full bg-cover bg-center grid lg:w-[70%] lg:grid-cols-[70%_30%]
-       gap-4 pt-[100px]">
-        <div className="flex flex-col justify-center items-start pl-[20px]">
+      <div className="lg:h-[450px] w-full bg-cover bg-center grid lg:w-[80%] lg:grid-cols-[70%_30%] gap-10 shadow-lg bg-white mt-[120px] shadow-black px-10 justify-center items-center relative">
+        {/* Circle Animation */}
+        {generateCircles()}
+
+        {/* Main Content */}
+        <div className="flex flex-col justify-center items-start pl-[20px] z-10">
           {/* Greeting and Name */}
           <motion.h1
-            className="font-handwriting text-[18px]"
+            className="font-handwriting text-[18px] text-[#14a423]" // Green color
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.5 }}
@@ -60,7 +86,10 @@ const Home = () => {
                       delay: wordIndex * 0.6 + letterIndex * 0.1, // Delay for each word and letter
                       duration: 0.3,
                     }}
-                    style={{ display: "inline-block" }}
+                    style={{
+                      display: "inline-block",
+                      color: (word.toLowerCase() === "a" || word.toLowerCase() === "developer") ? "#14a423" : "", // Green for "A" and "developer"
+                    }}
                   >
                     {letter}
                   </motion.span>
@@ -71,7 +100,7 @@ const Home = () => {
 
           {/* Introduction Paragraph */}
           <motion.p
-            className="text-[12px] font-bubbler font-semibold"
+            className="text-[12px] font-bubbler font-semibold my-[5px]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 2.0, duration: 0.5 }}
@@ -81,7 +110,7 @@ const Home = () => {
 
           {/* Projects Button */}
           <motion.button
-            className="border-2 font-bold font-bubbler border-black text-black px-[10px] py-[5px] my-[10px] rounded-md text-[14px] hover:bg-black hover:text-white"
+            className="border-2 font-bold font-bubbler  px-[10px] py-[5px] my-[20px] rounded-md text-[16px] bg-[#14a423] text-white hover:bg-[#197b23]"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 2.2, duration: 0.5 }}
@@ -93,16 +122,25 @@ const Home = () => {
         </div>
 
         {/* Profile Image with Animation */}
-        <div className="w-[280px] h-[280px] flex justify-center items-center m-auto">
-          <motion.div
-            animate={{ x: [0, 100, 0] }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2.5, duration: 0.8 }}
-          >
-            <img src={profileImage} alt="Profile Image" />
-          </motion.div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }} // Initially hidden and small
+          animate={{ opacity: 1, scale: 1 }} // Animate to full opacity and size
+          transition={{ delay: 2.5, duration: 1 }} // Delay and duration of the animation
+        >
+          <div className="w-[250px] h-[180px] flex justify-center items-center m-auto bg-[#14a423] z-0">
+            <div className='border-8 border-black relative bg-transparent mt-[50px] w-[250px] h-[180px] ml-[-50px]'>
+              <motion.div
+                animate={{ x: [0, 100, 0] }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 2.5, duration: 0.8 }}
+              >
+                <img src={profileImage} alt="Profile Image"
+                  className="absolute mt-[-70px] w-[350px]" />
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
