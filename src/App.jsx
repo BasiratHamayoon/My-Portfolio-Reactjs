@@ -11,13 +11,13 @@ function App() {
   return (
     <>
     {/* Navbar Container Wraper */}
-    <div className='w-[100%] absolute z-10 bg-white lg:px-[52px] md:px-[20px]'>
+    <div className='w-[100%] absolute z-10 bg-[#121313] lg:px-[52px] md:px-[20px]'>
       <Navbar />
       </div>
-      <div className='bg-[#14a423] h-[100vh]'>
+      <div className='bg-[#121314] h-[100vh]'>
        <Home />
       </div>
-      <div className=''>
+      <div className='bg-[#121313]'>
        <Skills />
       </div>
       <div className='h-[100vh] overflow-hidden'>

@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-between items-center py-[10px] w-full sm:px-[10px] lg:px-[100px]">
       {/* Logo Section */}
-      <img src={logo} className="w-[150px] h-[40px] lg:w-[200px] lg:h-[50px]" alt="Logo" />
+      <img src={logo} className="w-[300px] h-[100px] lg:w-[300px] lg:h-[70px]" alt="Logo" />
 
       {/* Desktop Navigation */}
       <div className="hidden lg:flex gap-10">
@@ -53,7 +53,7 @@ const Navbar = () => {
               className="w-[80px] h-[50px] flex justify-center items-center">
               <Link
                 to={item.url}
-                className="relative text-[15px] font-bubbler font-bold hover:text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-200 hover:after:w-full">
+                className="relative text-[15px] text-white font-bubbler font-bold hover:text-[#d20072] after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#d20072] after:transition-all after:duration-200 hover:after:w-full">
                 {item.title}
               </Link>
             </li>
@@ -64,7 +64,7 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <div className="lg:hidden flex items-center md:pr-[100px] pr-[20px]">
         {/* Burger Icon */}
-        <button onClick={toggleMenu} className="text-2xl">
+        <button onClick={toggleMenu} className="text-2xl text-[#d20072]">
           {isMenuOpen ? <FiX /> : <FiMenu />}
         </button>
       </div>
@@ -76,13 +76,13 @@ const Navbar = () => {
           animate={{ x: 0 }}
           exit={{ x: '100%' }}
           transition={{ type: 'tween', duration: 0.4 }}
-          className="absolute top-[60px] right-0 w-full bg-gray-100 z-50">
-          <ul className="flex flex-col items-center py-4 bg-gray-200">
+          className="absolute top-[60px] right-0 w-full bg-[#121313]  z-50">
+          <ul className="flex flex-col items-center py-4 bg-[#121313] ">
             {navItems.map((item) => (
               <li key={item.id} className="py-2 w-full text-center">
                 <Link
                   to={item.url}
-                  className="relative text-[15px] font-bubbler font-bold hover:text-black after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-200 hover:after:w-full"
+                  className="relative text-[15px] text-white font-bubbler font-bold hover:text-[#d20072] after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#d20072] after:transition-all after:duration-200 hover:after:w-full"
                   onClick={() => setIsMenuOpen(false)}>
                   {item.title}
                 </Link>
