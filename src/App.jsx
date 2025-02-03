@@ -4,6 +4,7 @@ import Navbar from './Costume.Components/Navbar.jsx'
 import Home from './Costume.Components/Home'
 import Skills from './Costume.Components/Skills'
 import Projects from './Costume.Components/Projects'
+import AboutMe from './Costume.Components/AboutMe'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,14 +15,17 @@ function App() {
     <div className='w-[100%] absolute z-10 bg-[#121313] lg:px-[52px] md:px-[20px]'>
       <Navbar />
       </div>
-      <div className='bg-[#121314] h-[100vh]'>
+      <div className='bg-[#121314] h-[100vh]' id='Home'>
        <Home />
       </div>
       <div className='bg-[#121313]'>
        <Skills />
       </div>
-      <div className='h-[100vh] overflow-hidden'>
+      <div className='h-[100vh] overflow-hidden bg-[#121313]' id='Projects'>
         <Projects />
+      </div>
+      <div className='bg-[#121313]'>
+        <AboutMe />
       </div>
     </>
   )

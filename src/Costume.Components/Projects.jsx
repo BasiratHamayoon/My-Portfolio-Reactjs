@@ -49,29 +49,22 @@ const Projects = () => {
         >
             {/* Top Background Animation */}
             <motion.div 
-                className='absolute top-0 left-1/2 -translate-x-1/2 w-[55%] h-[300px] bg-gray-300 rounded-b-full'
+                className='absolute top-0 left-1/2 -translate-x-1/2 w-[55%] h-[300px] bg-[#d20072] opacity-40 rounded-b-full'
                 initial={{ scaleY: 0 }}
                 whileInView={{ scaleY: 1 }}
                 transition={{ duration: 1.5 }}
                 viewport={{ once: true }}
             />
             
-            {/* Bottom Left Background Animation */}
-            <motion.div 
-                className='absolute bottom-0 left-[-10%] w-[500px] h-[300px] bg-gray-300 rounded-t-full'
-                initial={{ scaleY: 0 }}
-                whileInView={{ scaleY: 1 }}
-                transition={{ duration: 1.5, delay: 0.5 }}
-                viewport={{ once: true }}
-            />
+            
             
             <div className='relative flex flex-col w-[80%] justify-center items-center m-auto'>
-                <h1 className='text-[30px] font-sans border-y w-[40%] text-center'>My Projects</h1>
+                <h1 className='text-[30px] text-[#d20072] font-sans border-y w-[40%] text-center'>My Projects</h1>
                 <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 items-center gap-6 my-[50px] px-[10px]'>
                     {projectItems.map((item) => (
                         <motion.div 
-                        className={`relative flex flex-col justify-center items-center px-[10px] py-10 shadow-md gap-5 rounded-lg bg-gray-400 transition-all duration-300 cursor-pointer text-white
-                            ${hoveredId === item.id ? 'z-10' : 'z-0'}`}
+                        className={`relative flex flex-col justify-center items-center px-[10px] py-10 shadow-md gap-5 rounded-lg bg-[#d20072] transition-all duration-300 cursor-pointer text-black
+                         shadow-[#d20072]   ${hoveredId === item.id ? 'z-10' : 'z-0'}`}
                         key={item.id}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
@@ -85,15 +78,15 @@ const Projects = () => {
                             transition: { duration: 0.2 }
                         }}
                     >
-                            <div className='h-[150px] flex justify-center items-center w-full'>
+                            <div className='h-[100px] flex justify-center items-center w-full mb-[14px]'>
                                 <img src={item.img} className='w-[250px] h-[150px] object-cover' alt={item.title} />
                             </div>
                             <div className='flex flex-col justify-center items-start gap-2 px-[5px] h-[150px]'>
-                                <h1 className='text-[20px] text-wrap font-bold font-bubbler border-l-4 pl-2 border-white'>{item.title}</h1>
-                                <p className='text-[15px] font-bubbler'>{item.description}</p>
+                                <h1 className='text-[20px] text-wrap font-bold font-bubbler border-l-4 pl-2 border-black'>{item.title}</h1>
+                                <p className='text-[15px] font-bubbler font-semibold'>{item.description}</p>
                                 <motion.button
-                                    whileHover={{ scale: 1.1, backgroundColor: 'white', color: 'gray' }}
-                                    className='px-[10px] py-[5px] border-2 border-white m-auto rounded-md text-[18px] font-bold font-bubbler'
+                                    
+                                    className='px-[10px] py-[5px] border-2 border-black m-auto rounded-md text-[18px] font-bold text-black font-bubbler hover:bg-black hover:text-[#d20072]'
                                 >
                                     <a href={item.url} target='_blank' rel='noopener noreferrer'>View Project</a>
                                 </motion.button>

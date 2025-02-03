@@ -32,7 +32,7 @@ const generateCircles = () => {
         key={i}
         className="absolute w-[20px] h-[20px] rounded-full bg-[#d20072] opacity-50 shadow-xl shadow-[#ff088e]"
         initial={{ opacity: 0.3, scale: 0.2 }}
-        animate={{ opacity: 0, scale: 0.6 }}
+        animate={{ opacity: 0.2, scale: 0.9 }}
         transition={{ duration: 4, repeat: Infinity, repeatType: "mirror" }}
         style={{
           top: `${Math.random() * 100}%`, // Random vertical position

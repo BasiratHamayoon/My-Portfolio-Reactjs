@@ -138,7 +138,7 @@ const Home = () => {
                 transition={{ delay: 2.5, duration: 0.8 }}
               >
                 <img src={profileImage} alt="Profile Image"
-                  className="absolute mt-[-35px] w-[350px] ml-[50px]" />
+                  className="absolute mt-[-35px] w-[350px] ml-[50px] z-10" />
               </motion.div>
             </div>
           </div>
