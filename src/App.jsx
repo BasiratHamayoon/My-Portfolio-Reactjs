@@ -21,7 +21,7 @@ function App() {
       <div className='bg-[#121313]'>
        <Skills />
       </div>
-      <div className='h-[100vh] overflow-hidden bg-[#121313]' id='Projects'>
+      <div className='bg-[#121313]' id='Projects'>
         <Projects />
       </div>
       <div className='bg-[#121313]'>
