@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import img1 from '../assets/Projects-img/p1.png';
-import img2 from '../assets/Projects-img/p2.png';
-import img3 from '../assets/Projects-img/p3.png';
-import img4 from '../assets/Projects-img/p4.png';
+import img1 from '../assets/Projects-img/1.jpg';
+import img2 from '../assets/Projects-img/2.jpg';
+import img3 from '../assets/Projects-img/3.jpg';
+import img4 from '../assets/Projects-img/4.jpg';
+import img5 from '../assets/Projects-img/5.jpg';
+import img6 from '../assets/Projects-img/6.jpg';
+import img7 from '../assets/Projects-img/7.jpg';
+import img8 from '../assets/Projects-img/8.jpg';
+import img9 from '../assets/Projects-img/9.jpg';
+import img10 from '../assets/Projects-img/10.jpg';
+import img11 from '../assets/Projects-img/11.jpg';
+import img12 from '../assets/Projects-img/12.jpg';
 
 const Projects = () => {
     const [hoveredId, setHoveredId] = useState(null);
@@ -12,23 +20,24 @@ const Projects = () => {
         {
             id: 1,
             img: img1,
-            title: 'Portfolio Website in React.js',
-            description: 'A fully responsive portfolio website built with React.js, showcasing dynamic components, smooth navigation, and modern UI design.',
-            url: 'https://github.com/BasiratHamayoon/My-Portfolio-Reactjs.git'
+            title: 'LogIn Design',
+            description: 'A Responsive LOGIN Design using HTML and CSS',
+            url: 'https://github.com/BasiratHamayoon/Class-Task-03.git'
         },
+        
         {
             id: 2,
             img: img2,
-            title: 'Tuk Tuk Racer',
-            description: 'A thrilling 2D racing game developed with JavaScript and HTML Canvas. Features real physics and smooth gameplay.',
-            url: 'https://github.com/BasiratHamayoon/Tuktuk-Racer.git'
+            title: 'Online Book Store',
+            description: 'A Responsive Online book store using HTML and Css.',
+            url: 'https://github.com/BasiratHamayoon/Class-Task-04-HTML-CSS-Responsive-Book-Store.git'
         },
         {
             id: 3,
             img: img3,
-            title: 'Portfolio Website Using JS',
-            description: 'A static portfolio website with smooth animations, interactive UI, and a fully responsive layout for personal branding.',
-            url: 'https://github.com/BasiratHamayoon/My-Portfolio-Website.git'
+            title: 'Food Court',
+            description: 'Responsive design for a food court using HTML and CSS',
+            url: 'https://github.com/BasiratHamayoon/Web-Design-for-Food-Point.git'
         },
         {
             id: 4,
@@ -36,66 +45,81 @@ const Projects = () => {
             title: 'Coffee Ordering Website',
             description: 'An interactive coffee shop website allowing users to browse, customize, and order their favorite coffee online.',
             url: 'https://github.com/BasiratHamayoon/Coffee-Shop-Class-Task.git'
-        }
+        },
+        {
+            id: 5,
+            img: img5,
+            title: 'Dynamic Theme Changer',
+            description: 'An interactive Dynamic Theme Changer using HTML CSS and JAVASCRIPT',
+            url: 'https://github.com/BasiratHamayoon/task-04-Theme-Changer.git'
+        },
+        {
+            id: 6,
+            img: img6,
+            title: 'Portfolio Website in React.js',
+            description: 'A fully responsive portfolio website built with React.js, showcasing dynamic components, smooth navigation, and modern UI design.',
+            url: 'https://github.com/BasiratHamayoon/My-Portfolio-Reactjs.git'
+        },
+        {
+            id: 7,
+            img: img7,
+            title: 'Explore Beautiful world',
+            description: 'An iteractive and Responsive design for Explore beautiful world travelling using HTML CSS and JAVASCRIPT.',
+            url: 'https://github.com/BasiratHamayoon/Explore-the-Beautiful-world-website-using-HTML-Css.git'
+        },
+        {
+            id: 8,
+            img: img8,
+            title: 'TUK TUK Racer',
+            description: 'An iteractive and user friendly game using HTML CSS and JAVASCRIPT.',
+            url: 'https://github.com/BasiratHamayoon/Tuktuk-Racer.git'
+        },
+        {
+            id: 9,
+            img: img9,
+            title: 'Portfolio Website',
+            description: 'A portfolio website using HTML CSS and JAVAscript',
+            url: 'https://github.com/BasiratHamayoon/My-Portfolio-Website.git'
+        },
+        {
+            id: 10,
+            img: img10,
+            title: 'Online Camera Shop',
+            description: 'A Bootsrap project that is online camera shop',
+            url: 'https://github.com/BasiratHamayoon/NAVTTIC-Bootstrap-Project.git'
+        },
+        {
+            id: 11,
+            img: img11,
+            title: 'Login Signup Design',
+            description: 'A responsive login signup design using HTML CSS and JAVASCRIPT',
+            url: 'https://github.com/BasiratHamayoon/Login---Signup-design.git'
+        },
+        {
+            id: 12,
+            img: img12,
+            title: 'Color Switcher',
+            description: 'A Dynamic Color switcher using HTML CSS and JAVASCRIPT',
+            url: 'https://github.com/BasiratHamayoon/Color-Switcher.git'
+        },
+
+
+
     ];
 
     return (
-        <motion.div 
-            className='relative w-full py-20 overflow-hidden' 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.5 }}
-            viewport={{ once: true }}
-        >
-            {/* Top Background Animation */}
-            <motion.div 
-                className='absolute top-0 left-1/2 -translate-x-1/2 w-[55%] h-[300px] bg-[#d20072] opacity-40 rounded-b-full'
-                initial={{ scaleY: 0 }}
-                whileInView={{ scaleY: 1 }}
-                transition={{ duration: 1.5 }}
-                viewport={{ once: true }}
-            />
-            
-            
-            
-            <div className='relative flex flex-col w-[80%] justify-center items-center m-auto'>
-                <h1 className='text-[30px] text-[#d20072] font-sans border-y w-[40%] text-center'>My Projects</h1>
-                <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 items-center gap-6 my-[50px] px-[10px]'>
-                    {projectItems.map((item) => (
-                        <motion.div 
-                        className={`relative flex flex-col justify-center items-center px-[10px] py-10 shadow-md gap-5 rounded-lg bg-[#d20072] transition-all duration-300 cursor-pointer text-black
-                         shadow-[#d20072]   ${hoveredId === item.id ? 'z-10' : 'z-0'}`}
-                        key={item.id}
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1.2, delay: 1.3 }}
-                        viewport={{ once: true }}
-                        onMouseEnter={() => setHoveredId(item.id)}
-                        onMouseLeave={() => setHoveredId(null)}
-                        animate={{
-                            scale: hoveredId === item.id ? 1.2 : 1,
-                            boxShadow: hoveredId === item.id ? '0px 10px 20px rgba(0, 0, 0, 0.2)' : 'none',
-                            transition: { duration: 0.2 }
-                        }}
-                    >
-                            <div className='h-[100px] flex justify-center items-center w-full mb-[14px]'>
-                                <img src={item.img} className='w-[250px] h-[150px] object-cover' alt={item.title} />
-                            </div>
-                            <div className='flex flex-col justify-center items-start gap-2 px-[5px] h-[150px]'>
-                                <h1 className='text-[20px] text-wrap font-bold font-bubbler border-l-4 pl-2 border-black'>{item.title}</h1>
-                                <p className='text-[15px] font-bubbler font-semibold'>{item.description}</p>
-                                <motion.button
-                                    
-                                    className='px-[10px] py-[5px] border-2 border-black m-auto rounded-md text-[18px] font-bold text-black font-bubbler hover:bg-black hover:text-[#d20072]'
-                                >
-                                    <a href={item.url} target='_blank' rel='noopener noreferrer'>View Project</a>
-                                </motion.button>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
+       <div className='my-[30px] w-[80%] flex flex-col justify-center items-center m-auto'>
+            <div className='grid grid-cols-4'>
+                {projectItems.map((item, index) => (
+                    <div className='text-[#d20072]'>
+                        <img src={item.img} />
+                        <h1>{item.title}</h1>
+                        <p>{item.description}</p>
+                        <a href={item.url}>Veiw Project</a>
+                    </div>
+                ))}
             </div>
-        </motion.div>
+       </div>
     );
 };
 
