@@ -80,7 +80,7 @@ const Projects = () => {
                 transition={{ duration: 0.8, ease: 'easeInOut' }}
                 className="py-[100px] flex flex-col justify-center items-center w-[30%]"
             >
-                <h1 className="font-sans font-semibold text-[28px] text-[#d20072] border-b border-t border-[#d20072] py-[8px] w-[250px] text-center">
+                <h1 className="font-sans font-semibold text-[28px] text-[#d20072] border-b-2 border-[#d20072] py-[8px] w-[200px] text-center">
                     My Projects
                 </h1>
             </motion.div>

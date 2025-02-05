@@ -56,7 +56,7 @@ const Skills = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="border-b border-t border-[#d20072] w-[50%] m-auto my-[30px] relative z-10"
+        className="border-b-2 border-[#d20072] w-[20%] m-auto my-[30px] relative z-10"
       >
         <h2 className="lg:text-[35px] text-[#d20072] md:text-[24px] font-sans font-semibold text-center">My Skills</h2>
         <p className="text-[14px] text-white font-bubbler text-center">What I can offer</p>
