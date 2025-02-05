@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   const navItems = [
     { id: 'home', title: 'Home' },
@@ -20,8 +20,28 @@ const Navbar = () => {
 
   const scrollToSection = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    setActiveSection(id);
     setIsMenuOpen(false);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let currentSection = 'home';
+      navItems.forEach((item) => {
+        const section = document.getElementById(item.id);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            currentSection = item.id;
+          }
+        }
+      });
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="flex justify-between items-center py-[10px] w-full sm:px-[10px] px-[38px]">
@@ -35,7 +55,9 @@ const Navbar = () => {
             <li key={item.id} className="w-[80px] h-[50px] flex justify-center items-center">
               <button
                 onClick={() => scrollToSection(item.id)}
-                className="relative text-[15px] text-white font-bubbler font-bold hover:text-[#d20072] after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#d20072] after:transition-all after:duration-200 hover:after:w-full"
+                className={`relative text-[15px] font-bubbler font-bold after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#d20072] after:transition-all after:duration-200 hover:after:w-full transition-colors ${
+                  activeSection === item.id ? 'text-[#d20072] after:w-full' : 'text-white hover:text-[#d20072]'
+                }`}
               >
                 {item.title}
               </button>
@@ -63,7 +85,9 @@ const Navbar = () => {
               <li key={item.id} className="py-2 w-full text-center">
                 <button
                   onClick={() => scrollToSection(item.id)}
-                  className="relative text-[15px] text-white font-bubbler font-bold hover:text-[#d20072] after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#d20072] after:transition-all after:duration-200 hover:after:w-full"
+                  className={`relative text-[15px] font-bubbler font-bold after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-[#d20072] after:transition-all after:duration-200 hover:after:w-full transition-colors ${
+                    activeSection === item.id ? 'text-[#d20072] after:w-full' : 'text-white hover:text-[#d20072]'
+                  }`}
                 >
                   {item.title}
                 </button>

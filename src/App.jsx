@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       {/* Navbar Container Wrapper */}
-      <div className='w-[100%] absolute z-10 bg-[#121313] lg:px-[52px] md:px-[20px]'>
+      <div className='w-[100%] lg:px-[52px] md:px-[20px] sticky top-0 bg-[#121314] z-50'>
         <Navbar />
       </div>
       <div id='home' className='bg-[#121314] h-[100vh]'>

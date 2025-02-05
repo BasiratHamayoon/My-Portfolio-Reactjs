@@ -1,10 +1,24 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { FaGithub, FaLinkedin, FaInstagram, FaFacebook, FaEnvelope } from "react-icons/fa";
 
 const Contact = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { amount: 0.5, once: true });
+  const [activeSection, setActiveSection] = useState("Contact");
+
+  const navItems = [
+    { id: "home", title: "Home" },
+    { id: "skills", title: "Services" },
+    { id: "projects", title: "Projects" },
+    { id: "about", title: "About Me" },
+    { id: "contact", title: "Contact" },
+  ];
+
+  const scrollToSection = (id) => {
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    setActiveSection(id);
+  };
 
   return (
     <motion.div
@@ -30,20 +44,16 @@ const Contact = () => {
 
       {/* Navigation Links */}
       <div className="flex justify-center mt-6 gap-6 relative z-10">
-        {[
-          { title: "Home", id: "Home" },
-          { title: "Services", id: "Services" },
-          { title: "Projects", id: "Projects" },
-          { title: "About Me", id: "AboutMe" },
-          { title: "Contact", id: "Contact" }
-        ].map((item, index) => (
-          <a 
-            key={index} 
-            href={`#${item.id}`} 
-            className="text-black font-bubbler font-bold text-lg hover:text-gray-300 transition"
+        {navItems.map((item, index) => (
+          <button
+            key={index}
+            onClick={() => scrollToSection(item.id)}
+            className={`text-black font-bubbler font-bold text-lg hover:text-gray-300 transition ${
+              activeSection === item.id ? "underline" : ""
+            }`}
           >
             {item.title}
-          </a>
+          </button>
         ))}
       </div>
 
@@ -64,13 +74,13 @@ const Contact = () => {
             { href: "https://www.linkedin.com/in/basirat-humayun-a8083a259", icon: <FaLinkedin /> },
             { href: "https://mail.google.com/mail/u/0", icon: <FaEnvelope /> },
             { href: "https://www.instagram.com/basirat_humayun2", icon: <FaInstagram /> },
-            { href: "https://www.facebook.com/share/15t4ktM36f/", icon: <FaFacebook /> }
+            { href: "https://www.facebook.com/share/15t4ktM36f/", icon: <FaFacebook /> },
           ].map((item, index) => (
-            <a 
-              key={index} 
-              href={item.href} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              key={index}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-black text-3xl hover:text-gray-300 transition"
             >
               {item.icon}
