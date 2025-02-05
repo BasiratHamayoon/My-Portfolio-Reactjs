@@ -111,7 +111,7 @@ const Home = () => {
 
           {/* Projects Button */}
           <motion.button
-            className=" font-bold font-bubbler  px-[10px] py-[5px] my-[20px] rounded-md text-[16px] bg-[#d20072] text-black hover:bg-[#d20072]"
+            className=" font-bold font-bubbler text-[#d20072] border-2 border-[#d20072]  px-[10px] py-[5px] my-[20px] rounded-md text-[18px] bg-[#121313] hover:text-black hover:bg-[#d20072]"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 2.2, duration: 0.5 }}
