@@ -9,7 +9,7 @@ const Contact = () => {
 
   const navItems = [
     { id: "home", title: "Home" },
-    { id: "skills", title: "Services" },
+    { id: "skills", title: "Skills" },
     { id: "projects", title: "Projects" },
     { id: "about", title: "About Me" },
     { id: "contact", title: "Contact" },
